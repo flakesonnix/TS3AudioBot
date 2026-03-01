@@ -114,7 +114,7 @@ jobs:
       id: get_version
       run: |
         cd publish
-        TSABVERSION=${{ needs.build_tsab.outputs.tsab_version }}
+        TSABVERSION="${{ needs.build_tsab.outputs.tsab_version }}"
         TSABBRANCH="${{ github.head_ref || github.ref_name }}"
         TASBBUILDSUFFIX=$(echo ${{ matrix.rid }} | tr '-' '_')
         echo "TSABVERSION=$TSABVERSION" >> $GITHUB_ENV
